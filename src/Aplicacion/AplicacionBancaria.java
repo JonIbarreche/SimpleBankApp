@@ -34,8 +34,11 @@ class CuentaBanco {
 
 	void retirar(int cantidad) {
 		if (cantidad != 0) {
-			balance = balance - cantidad;
-			anteriorTransaccion = -cantidad;
+			if (cantidad < balance) {
+				balance = balance - cantidad;
+				anteriorTransaccion = -cantidad;
+			}
+			
 		}
 	}
 
@@ -66,6 +69,12 @@ class CuentaBanco {
 		System.out.println("E. Salir");
 
 		do {
+			System.out.println("--------------------------------------------");
+			System.out.println("A. Balance Actual");
+			System.out.println("B. Depositar");
+			System.out.println("C. Retirar");
+			System.out.println("D. Anterior Transaccion");
+			System.out.println("E. Salir");
 			System.out.println("=====================");
 			System.out.println("Elige una opcion");
 			System.out.println("=====================");
@@ -92,7 +101,16 @@ class CuentaBanco {
 				System.out.println("Introduce la cantidad que quieres RETIRAR:");
 				System.out.println("-------------------------------");
 				int cantidad1 = scanner.nextInt();
-				retirar(cantidad1);
+				if (cantidad1 <= balance) {
+					retirar(cantidad1);
+				}else {
+					System.out.println("\n");
+					System.out.println("*********************************************************");
+					System.out.println("No puedes retirar una cantidad superior al Balance Actual");
+					System.out.println("*********************************************************");
+
+				}
+				
 				System.out.println("\n");
 				break;
 			case 'D' | 'd':
