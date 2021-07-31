@@ -1,6 +1,6 @@
 # AplicacionBancaria
 
-**Version 1.0.1**
+**Version 1.0.2**
 
 Un ejemplo de aplicacion bancaria sencilla con operaciones:
 - Balance Actual
