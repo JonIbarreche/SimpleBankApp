@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class CuentaBanco {
 
-
 	int balance;
 	int anteriorTransaccion;
 	String nombreCliente;
@@ -30,7 +29,7 @@ public class CuentaBanco {
 				balance = balance - cantidad;
 				anteriorTransaccion = -cantidad;
 			}
-			
+
 		}
 	}
 
@@ -95,14 +94,14 @@ public class CuentaBanco {
 				int cantidad1 = scanner.nextInt();
 				if (cantidad1 <= balance) {
 					retirar(cantidad1);
-				}else {
+				} else {
 					System.out.println("\n");
 					System.out.println("*********************************************************");
 					System.out.println("No puedes retirar una cantidad superior al Balance Actual");
 					System.out.println("*********************************************************");
 
 				}
-				
+
 				System.out.println("\n");
 				break;
 			case 'D' | 'd':
@@ -128,7 +127,5 @@ public class CuentaBanco {
 		System.out.println("--------------------------------------------");
 
 	}
-
-	
 
 }
